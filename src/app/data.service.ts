@@ -24,4 +24,8 @@ export class DataService {
   getNews() {
     return this.http.get(this.newsUrl);
   }
+
+  getNew(newsId) {
+    return this.http.get(this.newsUrl + newsId);
+  }
 }

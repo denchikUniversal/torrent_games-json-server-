@@ -1,3 +1,8 @@
-<p>
-  news-details works!
-</p>
+<h1>{{new.title}}</h1>
+
+<div class="content">
+    <img [src]="new.img" alt="{{new.title}}">
+    <p>{{new.description}}</p>
+</div>
+
+<a routerLink="/news" class="btn">Back</a>
