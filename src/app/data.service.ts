@@ -11,6 +11,7 @@ export class DataService {
 
   //gameUrl ="https://my-json-server.typicode.com/denchikUniversal/json-faker-directory/games/";
   gameUrl = "http://localhost:3000/games/";
+  newsUrl = "http://localhost:3000/news/";
 
   getGames() {
     return this.http.get(this.gameUrl);
@@ -18,5 +19,9 @@ export class DataService {
 
   getGame(gameId) {
     return this.http.get(this.gameUrl + gameId);
+  }
+
+  getNews() {
+    return this.http.get(this.newsUrl);
   }
 }
