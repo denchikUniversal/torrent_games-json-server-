@@ -2,12 +2,13 @@
 
 }
 
-.content .card{
+.content .card a{
     max-width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: #dcf5e0;
     margin: 10px 0;
+    text-decoration: none;
 }
 
 .content .card .img{

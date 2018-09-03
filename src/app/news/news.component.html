@@ -1,13 +1,15 @@
 <h1>News</h1>
 
 <div class="content">
-  <div class="card" *ngFor="let new of news">
-      <div class="img">
-          <img [src]="new.img" alt="{{new.title}}">
-        </div>
-        <div class="content-inner">
-          <h3>{{new.title}}</h3>
-          <p>{{new.description}}</p>
-        </div>
-  </div>  
+    <div class="card" *ngFor="let new of news">
+        <a routerLink="/news-details/{{new.id}}">
+        <div class="img">
+            <img [src]="new.img" alt="{{new.title}}">
+          </div>
+          <div class="content-inner">
+            <h3>{{new.title}}</h3>
+            <p>{{new.description}}</p>
+          </div>
+        </a>
+    </div> 
 </div>

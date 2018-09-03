@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-news-details',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsDetailsComponent implements OnInit {
 
-  constructor() { }
+  new: Object;
+
+  constructor(private data: DataService, private route: ActivatedRoute) {
+    this.route.params.subscribe( params => {
+      this.new = params.id
+    })
+   }
 
   ngOnInit() {
+    this.data.getNews().subscribe(
+      data => this.new = data
+    )
   }
 
 }
