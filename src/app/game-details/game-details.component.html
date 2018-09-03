@@ -1,15 +1,25 @@
 <h1>{{game.name}} </h1>
 
 <div class="content">
-    <img [src]="game.imgUrl" alt="{{game.name}}">
-    <ul>
-        <li><span>Разработчик: </span>  {{game.developer}}</li>
-        <li><span>Тип издания: </span> {{game.type}}</li>
-        <li><span>Таблэтка: </span> {{game.pill}}</li>
-        <li><span>Операционная система: </span> {{game.os}}</li>
-        <li><span>Процессор: </span> {{game.processor}}</li>
-        <li><span>Видеокарта: </span> {{game.video}}</li>
-        <li><span>Место на диске: </span> {{game.hdd}}</li>
-        <li><span>Описание: </span>{{game.descr}}</li>
-    </ul>
+    <div class="img">
+         <img [src]="game.imgUrl" alt="{{game.name}}">
+         <div class="buttons">
+             <button class="btn">XATAB</button>
+             <button class="btn">RG-MECHANICS</button>
+         </div>
+    </div>
+    
+    <div class="info">
+        <ul>
+            <li><span>Разработчик: </span>  {{game.developer}}</li>
+            <li><span>Тип издания: </span> {{game.type}}</li>
+            <li><span>Таблэтка: </span> {{game.pill}}</li>
+            <li><span>Операционная система: </span> {{game.os}}</li>
+            <li><span>Процессор: </span> {{game.processor}}</li>
+            <li><span>Видеокарта: </span> {{game.video}}</li>
+            <li><span>Место на диске: </span> {{game.hdd}}</li>
+            <li><span>Описание: </span>{{game.descr}}</li>
+        </ul>
+    </div>
+    
 </div>

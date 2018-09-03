@@ -23,7 +23,7 @@ export class GameDetailsComponent implements OnInit {
     //   .then(data => data.json())
     //   .then(json => console.log(json));
 
-      this.data.getGame(this.game).subscribe( data => this.game = data )
+      this.data.getGame(this.game).subscribe( data => this.game = data );
   }
 
 }

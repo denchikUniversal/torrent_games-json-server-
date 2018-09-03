@@ -2,9 +2,11 @@
 
 <div class="content">
   <div class="card" *ngFor="let game of games | paginate: {itemsPerPage: 9, currentPage: p}">
-    <img [src]="game.imgUrl" alt="{{game.name}}">
-    <h3>{{game.name}}</h3>
-    <a routerLink="/game-details/{{game.id}}">Details</a>
+    <img [src]="game.imgUrl" alt="{{game.name}}" class="img-content">
+    <div class="details">
+        <!-- <h3>{{game.name}}</h3> -->
+        <a routerLink="/game-details/{{game.id}}">Details</a>
+    </div>    
   </div>
 </div>
 
