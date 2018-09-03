@@ -10,6 +10,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { GamesComponent } from './games/games.component';
 import { NewsComponent } from './news/news.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
+import { NewsDetailsComponent } from './news-details/news-details.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GameDetailsComponent } from './game-details/game-details.component';
     SidebarComponent,
     GamesComponent,
     NewsComponent,
-    GameDetailsComponent
+    GameDetailsComponent,
+    NewsDetailsComponent
   ],
   imports: [
     BrowserModule,
