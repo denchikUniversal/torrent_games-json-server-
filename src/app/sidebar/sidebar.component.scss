@@ -1,0 +1,27 @@
+nav {
+    background: #2D2E2E;
+    height: 100%;
+    max-width: 100%;
+    text-align: center;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+
+            a {
+                color: #fff;
+                padding: 20px;
+                display: block;
+                text-decoration: none;
+            }
+
+            .activated {
+                background-color: #00a8ff;
+            }
+        }
+    }
+    
+}

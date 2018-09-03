@@ -1,0 +1,32 @@
+.content{
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content .card{
+    margin: 0 10px;
+    background-color: #2e2e2e;
+    margin: 15px;
+    color: #fff;
+    padding: 10px;
+    width: 300px;
+}
+
+.content .card a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #2ed832;
+    padding: 10px 40px
+}
+
+.content .card a:hover{
+    background-color: #54f157;
+}
+
+.content .card img{
+    max-width: 100%;
+    height: 400px;
+}

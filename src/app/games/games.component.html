@@ -1,0 +1,11 @@
+<h1>Games</h1>
+
+<div class="content">
+  <div class="card" *ngFor="let game of games | paginate: {itemsPerPage: 9, currentPage: p}">
+    <img [src]="game.imgUrl" alt="{{game.name}}">
+    <h3>{{game.name}}</h3>
+    <a routerLink="/game-details/{{game.id}}">Details</a>
+  </div>
+</div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
