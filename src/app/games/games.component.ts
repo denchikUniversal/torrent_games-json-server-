@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Observable } from 'rxjs';
-;
+
 
 @Component({
   selector: 'app-games',
@@ -11,6 +10,7 @@ import { Observable } from 'rxjs';
 export class GamesComponent implements OnInit {
 
   games: Object;
+  public ganre: string;
 
   constructor(private data: DataService) { }
 
