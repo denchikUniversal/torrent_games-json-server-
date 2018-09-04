@@ -10,7 +10,6 @@ import { DataService } from '../data.service';
 export class GamesComponent implements OnInit {
 
   games: Object;
-  public ganre: string;
 
   constructor(private data: DataService) { }
 

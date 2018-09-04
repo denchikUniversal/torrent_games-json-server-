@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import {filter} from 'rxjs/operators';
 
 
 @Component({
