@@ -8,6 +8,7 @@ import { DataService } from '../data.service';
 })
 export class NewsComponent implements OnInit {
   news: Object;
+  
   constructor(private data: DataService) { }
 
   ngOnInit() {
