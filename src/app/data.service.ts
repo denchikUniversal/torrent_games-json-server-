@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
-import { Item } from './models/item';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -10,40 +8,33 @@ import { Item } from './models/item';
 })
 export class DataService {
 
-  itemsCollection: AngularFirestoreCollection<Item>
-  items: Observable<Item[]>
+  
 
-  constructor(public afs: AngularFirestore) { 
-    this.items = this.afs.collection('items').valueChanges()
+  constructor(private http: HttpClient) { 
+    // this.items = this.afs.collection('items').valueChanges();
   }
 
   //gameUrl ="https://my-json-server.typicode.com/denchikUniversal/json-faker-directory/games/";
-  // gameUrl = "http://localhost:3000/games/";
-  // newsUrl = "http://localhost:3000/news/";
+  gameUrl = "http://localhost:3000/games/";
+  newsUrl = "http://localhost:3000/news/";
 
 
-  // getGames(){
-  //   return this.http.get(this.gameUrl);
-  // }
-  getGames() {
-    return this.items;
+  getGames(){
+    return this.http.get(this.gameUrl);
   }
 
-  // getGame(gameId): Observable<Object> {
-  //   return this.http.get(this.gameUrl + gameId);
-  // }
-
-  getGame(gameId) {
-    return (this.items + '/' + gameId);
+  getGame(gameId): Observable<Object> {
+    return this.http.get(this.gameUrl + gameId);
   }
 
-  // getNews(): Observable<Object> {
-  //   return this.http.get(this.newsUrl);
-  // }
 
-  // getNew(newsId): Observable<Object> {
-  //   return this.http.get(this.newsUrl + newsId);
-  // }
+  getNews(): Observable<Object> {
+    return this.http.get(this.newsUrl);
+  }
+
+  getNew(newsId): Observable<Object> {
+    return this.http.get(this.newsUrl + newsId);
+  }
 }
 
 
