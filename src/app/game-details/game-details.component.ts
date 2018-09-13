@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
+import { Item } from '../models/item';
 
 
 @Component({
@@ -10,11 +11,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GameDetailsComponent implements OnInit {
 
-  game: Object;
+  game: Item[];
 
   constructor(private data: DataService, private route: ActivatedRoute) {
     this.route.params.subscribe( params => {
-      this.game = parseInt(params.id)
+      this.game = params.id
     })
    }
 

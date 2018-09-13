@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
+import { Item } from './models/item';
 
 
 @Injectable({
@@ -13,7 +13,7 @@ export class DataService {
   itemsCollection: AngularFirestoreCollection<Item>
   items: Observable<Item[]>
 
-  constructor(private http: HttpClient, public afs: AngularFirestore) { 
+  constructor(public afs: AngularFirestore) { 
     this.items = this.afs.collection('items').valueChanges()
   }
 
@@ -22,36 +22,29 @@ export class DataService {
   // newsUrl = "http://localhost:3000/news/";
 
 
-  getGames(){
+  // getGames(){
+  //   return this.http.get(this.gameUrl);
+  // }
+  getGames() {
     return this.items;
   }
 
-  getGame(gameId): Observable<Object> {
-    return this.http.get(this.gameUrl + gameId);
+  // getGame(gameId): Observable<Object> {
+  //   return this.http.get(this.gameUrl + gameId);
+  // }
+
+  getGame(gameId) {
+    return (this.items + '/' + gameId);
   }
 
-  getNews(): Observable<Object> {
-    return this.http.get(this.newsUrl);
-  }
+  // getNews(): Observable<Object> {
+  //   return this.http.get(this.newsUrl);
+  // }
 
-  getNew(newsId): Observable<Object> {
-    return this.http.get(this.newsUrl + newsId);
-  }
+  // getNew(newsId): Observable<Object> {
+  //   return this.http.get(this.newsUrl + newsId);
+  // }
 }
 
 
-interface Item {
-  id?: string;
-  name?: string;
-  developer?: string;
-  type?: string;
-  pill?: string;
-  os?: string;
-  processor?: string;
-  ddr?: string;
-  video?: string;
-  hdd?: string;
-  descr?: string;
-  imgUrl?: string;
-  ganre?: string;
-}
+
