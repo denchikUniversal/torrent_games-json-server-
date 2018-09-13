@@ -11,16 +11,19 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument}
 export class DataService {
 
   itemsCollection: AngularFirestoreCollection<Item>
+  items: Observable<Item[]>
 
-  constructor(private http: HttpClient, public afs: AngularFirestore) { }
+  constructor(private http: HttpClient, public afs: AngularFirestore) { 
+    this.items = this.afs.collection('items').valueChanges()
+  }
 
   //gameUrl ="https://my-json-server.typicode.com/denchikUniversal/json-faker-directory/games/";
-  gameUrl = "http://localhost:3000/games/";
-  newsUrl = "http://localhost:3000/news/";
+  // gameUrl = "http://localhost:3000/games/";
+  // newsUrl = "http://localhost:3000/news/";
 
 
-  getGames(): Observable<Object>{
-    return this.http.get(this.gameUrl);
+  getGames(){
+    return this.items;
   }
 
   getGame(gameId): Observable<Object> {
