@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Item } from '../models/item';
 
 
 @Component({
@@ -10,7 +9,7 @@ import { Item } from '../models/item';
 })
 export class GamesComponent implements OnInit {
 
-  games: Item[];
+  games: Object;
 
   constructor(private data: DataService) { }
 
